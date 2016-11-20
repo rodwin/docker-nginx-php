@@ -7,7 +7,7 @@ MAINTAINER rodwin lising <rodwinlising@gmail.com>
 RUN apt-get update
 
 # Install nginx, php-fpm and supervisord from ubuntu repository
-RUN apt-get install -y nginx php7.0-fpm supervisor nodejs nodejs-dev npm curl
+RUN apt-get install -y nginx php7.0-fpm supervisor nodejs nodejs-dev npm curl git
 
 # Install gulp and bower with NPM
 RUN npm install -g \
@@ -54,7 +54,7 @@ WORKDIR /var/www/html
 
 # Configure Services and Port
 COPY start.sh /start.sh
-CMD ["./start.sh"]
-
+#CMD ["./start.sh"]
+ENTRYPOINT ["/bin/bash", "/start.sh"] 
 EXPOSE 80 443
 
