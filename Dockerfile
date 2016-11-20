@@ -7,7 +7,39 @@ MAINTAINER rodwin lising <rodwinlising@gmail.com>
 RUN apt-get update
 
 # Install nginx, php-fpm and supervisord from ubuntu repository
-RUN apt-get install -y nginx php7.0-fpm supervisor nodejs nodejs-dev npm curl git
+RUN apt-get install -y \
+	nginx \
+	php7.0-fpm \
+	php7.0-cli \
+    php7.0-common \
+    php7.0-curl \
+    php7.0-json \
+    php7.0-xml \
+    php7.0-mbstring \
+    php7.0-mcrypt \
+    php7.0-mysql \
+    php7.0-pgsql \
+    php7.0-sqlite \
+    php7.0-sqlite3 \
+    php7.0-zip \
+    php7.0-memcached \
+    php7.0-gd \
+    pkg-config \
+    php-dev \
+    libcurl4-openssl-dev \
+    libedit-dev \
+    libssl-dev \
+    libxml2-dev \
+    xz-utils \
+    libsqlite3-dev \
+    sqlite3 \
+	supervisor \
+	nodejs \
+	nodejs-dev \
+	npm \
+	curl \
+	git \
+	postgresql-client
 
 # Install gulp and bower with NPM
 RUN npm install -g \
